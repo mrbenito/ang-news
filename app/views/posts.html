@@ -18,7 +18,7 @@
         <span>submitted by <a href="#/users/{{ post.owner }}">{{ post.owner }}</a></span>
         &mdash;
         <a href="#/posts/{{ post.$id }}">comments</a>
-        <a ng-click="deletePost(post)">delete</a>
+        <a ng-click="deletePost(post.$id)" ng-show="signedIn() && post.owner === currentUser.username">delete</a>
       </div>
     </div>
     <div class="col-md-2">

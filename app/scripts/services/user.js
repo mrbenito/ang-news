@@ -26,6 +26,9 @@ app.factory('User', function ($firebase, FIREBASE_URL, Auth, $rootScope) {
     },
     signedIn: function () {
     	return $rootScope.currentUser !== undefined;
+    },
+    posts: function (username) {
+    	return $firebase(new Firebase(FIREBASE_URL + "/user_posts/" + username));
     }
   };
 
